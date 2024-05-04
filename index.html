@@ -1,0 +1,143 @@
+
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>THOP ALIMENTOS - Acompanhando os seus momentos</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="header">
+    <div class="header-inner">
+      <div class="logo-container">
+        <img src="Imagens/logo.jpg" alt="THOP ALIMENTOS Logo" class="logo">
+        <h1 class="site-name">THOPE ALIMENTOS</h1>
+        <p class="slogan">Acompanhando os seus momentos</p>
+      </div>
+      <form class="search-form" id="searchForm">
+        <input type="text" placeholder="Buscar alimentos..." class="search-bar" id="searchInput">
+        <button type="submit" class="search-button">Buscar</button>
+      </form>
+    </div>
+  </header>
+
+  <!-- Abas de propaganda -->
+  <div class="propaganda-tab left-tab">
+    <img src="Imagens\indisponivel.jpg" alt="Propaganda 1" class="propaganda-image">
+  </div>
+  <div class="propaganda-tab right-tab">
+    <img src="Imagens\indisponivel.jpg" alt="Propaganda 2" class="propaganda-image">
+  </div>
+
+  <section id="menu" class="menu-section">
+    <div class="menu-container">
+      <!-- Caixa de cards de alimentos -->
+      <div class="card-box">
+        <!-- Cards de alimentos -->
+        <div class="card">
+          <img src="Imagens/Camarao1.jpg" alt="Camarão Empanado">
+          <div class="card-info">
+            <h3>CAMARÃO EMPANADO RECHEADO</h3>
+            <p class="description"><strong>SABORES: Requeijão, Alho-Poró e Mussarela, Mexicano Picante, Cheddar, Tomate Seco e Cream Cheese</strong></p>
+            <button class="info-button">Informações</button>
+          </div>
+        </div>
+        <!-- Adicione mais cards aqui conforme necessário -->
+        <div class="card">
+          <img src="Imagens\croquete .jpg" alt="Croquete de Bacalhau">
+          <div class="card-info">
+            <h3>CROQUETE DE BACALHAU</h3>
+            <p class="description"><strong>CROQUETE DE BACALHAU RECHEADO COM REQUEIJÃO - Bandeja 360g - 12 Unidades</strong></p>
+            <button class="info-button">Informações</button>
+          </div>
+        </div>
+        <!-- Adicione mais cards aqui conforme necessário -->
+
+        <div class="card">
+          <img src="Imagens/bolinho_de_mandioca.jpg" alt="Bolinho de Mandioca">
+          <div class="card-info">
+            <h3>BOLINHO DE MANDIOCA</h3>
+            <p class="description">Delicioso bolinho de mandioca. Um petisco brasileiro tradicional, crocante por fora e macio por dentro.</p>
+            <button class="info-button">Informações</button>
+          </div>
+        </div>
+
+        <div class="card">
+          <img src="Imagens/bolinho_de_salmao.jpg" alt="Bolinho de Salmão">
+          <div class="card-info">
+            <h3>BOLINHO DE SALMÃO</h3>
+            <p class="description">Delicioso bolinho de salmão feito com ingredientes frescos. Saboroso bolinho feito com salmão fresco e temperos selecionados.</p>
+            <button class="info-button">Informações</button>
+          </div>
+        </div>
+        <!-- Adicione mais cards aqui para outros alimentos -->
+      </div>
+
+      <!-- Segunda fileira de cards -->
+      <div class="card-box">
+        <!-- Cards de alimentos -->
+        <div class="card">
+          <img src="Imagens/bolinho_de_tilapia.jpg" alt="Bolinho de Tilápia">
+          <div class="card-info">
+            <h3>BOLINHO DE TILÁPIA</h3>
+            <p class="description"><strong>BOLINHO DE TILÁPIA COM REQUEIJÃO - Bandeja com 12 Unidades - 360g</strong></p>
+            <button class="info-button">Informações</button>
+          </div>
+        </div>
+
+        <div class="card">
+          <img src="Imagens/coxinha.jpg" alt="Coxinha">
+          <div class="card-info">
+            <h3>COXINHA</h3>
+            <p class="description">Deliciosa coxinha recheada. Crocante por fora, cremosa por dentro, uma verdadeira explosão de sabor.</p>
+            <button class="info-button">Informações</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Outras fileiras de cards -->
+    </div>
+  </section>
+
+  <!-- Opção de mais páginas -->
+  <div class="pagination">
+    <a href="index.html">1</a>
+    <a href="pag1.html">2</a>
+    <a href="pag2.html">3</a>
+    <a href="pag3.html">4</a>
+    <!-- Adicione mais links conforme necessário -->
+  </div>
+
+  <div class="contact-form">
+    <h2>Entre em Contato</h2>
+    <form id="contactForm">
+      <label for="name">Nome:</label>
+      <input type="text" id="name" name="name" required>
+
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" required>
+
+      <label for="message">Mensagem:</label>
+      <textarea id="message" name="message" required></textarea>
+
+      <button type="submit">Enviar</button>
+    </form>
+  </div>
+
+  <footer class="footer">
+    <div class="footer-inner">
+      <p class="footer-text">&copy; 2024 THOP ALIMENTOS. Todos os direitos reservados</p>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById("searchForm").addEventListener("submit", function(event) {
+      event.preventDefault();
+      const searchTerm = document.getElementById("searchInput").value;
+      console.log("Termo de pesquisa:", searchTerm);
+    });
+  </script>
+</body>
+</html>

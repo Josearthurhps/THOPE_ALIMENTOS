@@ -1,0 +1,249 @@
+/* Reset CSS */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* Estilos Globais */
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #f2f2f2;
+    color: #333;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Cabeçalho */
+.header {
+    background: linear-gradient(to right, var(--ifood-primary), var(--ifood-secondary), var(--ifood-tertiary)); /* Gradiente de cores do iFood */
+    padding: 20px 0;
+    text-align: center;
+    transition: background 0.5s; /* Animação de transição de cor de fundo */
+}
+
+.header-inner {
+    display: flex;
+    justify-content: center; /* Centraliza os elementos horizontalmente */
+    align-items: center;
+    flex-wrap: wrap; /* Permite que os elementos quebrem para a próxima linha */
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin-bottom: 20px; /* Adiciona margem inferior para separar dos cards */
+}
+
+.logo {
+    width: 80px; /* Ajusta o tamanho da logo */
+    height: auto; /* Mantém a proporção */
+    margin-bottom: 10px; /* Reduz a margem inferior */
+}
+
+.site-name {
+    font-family: 'Bebas Neue', cursive; /* Fonte Bomb */
+    font-size: 48px; /* Aumenta o tamanho da fonte */
+    color: var(--ifood-secondary); /* Cor amarela */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Adiciona sombra */
+    margin: 10px 0; /* Aumenta a margem para dar mais espaço */
+    text-align: center; /* Centraliza o texto */
+}
+
+.slogan {
+    font-size: 20px; /* Reduz o tamanho da slogan */
+    color: var(--ifood-primary); /* Cor vermelha */
+    text-align: center; /* Centraliza o texto */
+    font-weight: bold; /* Aumenta o peso da fonte */
+    text-transform: uppercase; /* Transforma o texto em maiúsculas */
+    letter-spacing: 1px; /* Espaçamento entre letras */
+    margin-bottom: 20px; /* Aumenta a margem inferior */
+}
+
+/* Barra de pesquisa */
+.search-form {
+    margin-top: 10px;
+}
+
+.search-bar {
+    padding: 12px;
+    width: 100%;
+    border: none;
+    border-radius: 20px;
+    margin-bottom: 20px;
+}
+
+.search-button {
+    padding: 15px 30px;
+    background-color: red; /* Cor vermelha */
+    color: yellow; /* Cor amarela */
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+.search-button:hover {
+    background-color: #ffb300; /* Amarelo iFood escurecido ao passar o mouse */
+}
+
+/* Abas de propaganda */
+.propaganda-tab {
+    position: fixed;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 100px;
+    height: 100px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.left-tab {
+    left: 0;
+}
+
+.right-tab {
+    right: 0;
+}
+
+.propaganda-image {
+    width: auto;
+    height: 100%;
+}
+
+/* Menu */
+.menu-section {
+    padding: 20px 0;
+}
+
+.menu-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0 20px;
+}
+
+.card-box {
+    width: 100%;
+    margin-bottom: 60px; /* Espaçamento inferior */
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between; /* Alinha os cards de forma a ocupar o espaço disponível */
+}
+
+/* Card */
+.card {
+    background-color: #fff; /* Fundo branco */
+    border-radius: 1px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave */
+    width: calc(66% - 100px); /* Ajuste do tamanho para dois cards por linha com margem de 20px entre eles */
+    transition: transform 0.3s, box-shadow 0.3s; /* Animação de transição */
+    padding: 5px; /* Aumenta o preenchimento interno */
+}
+
+.card:hover {
+    transform: translateY(-5px); /* Efeito de levantamento ao passar o mouse */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Sombra mais intensa ao passar o mouse */
+}
+
+.card img {
+    width: 100%;
+    height: auto;
+    border-radius: 50px; /* Adiciona borda arredondada */
+    object-fit: cover; /* Redimensiona a imagem para preencher o espaço */
+}
+
+.card-info {
+    text-align: center;
+}
+
+.card-info h3 {
+    font-size: 24px;
+    margin-bottom: 15px;
+}
+
+.card-info p {
+    font-size: 16px;
+    margin-bottom: 15px;
+}
+
+.info-button {
+    padding: 10px 20px;
+    background-color: red; /* Cor vermelha */
+    color: yellow; /* Cor amarela */
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    margin-top: auto;
+}
+
+.info-button:hover {
+    background-color: #555;
+}
+
+/* Rodapé */
+.footer {
+    background-color: #ff4d4d;
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+}
+
+/* Responsividade */
+@media only screen and (max-width: 100%) {
+    .card {
+        width: 100%;
+        }
+    }
+
+/* Estilo para os números de página */
+.pagination {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.pagination a {
+    display: inline-block;
+    margin: 0 5px;
+    padding: 5px 10px;
+    background-color: #ff9999;
+    color: #fff;
+    border-radius: 5px;
+    text-decoration: none;
+}
+
+.pagination a:hover {
+    background-color: #ff6666;
+}
+
+/* Estilos para o formulário de contato */
+.contact-form {
+    margin: 20px auto;
+    max-width: 600px;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 5px;
+}
+
+.contact-form h2 {
+    margin-top: 0;
+    color: #333;
+}
+
+.contact-form label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+.contact-form input[type="text"],
+.contact-form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+}
