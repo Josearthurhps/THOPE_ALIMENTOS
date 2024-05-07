@@ -1,10 +1,3 @@
-/* Reset CSS */
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-}
-
 /* Estilos Globais */
 body {
     font-family: 'Roboto', sans-serif;
@@ -26,18 +19,11 @@ body {
     transition: background 0.5s; /* Animação de transição de cor de fundo */
 }
 
-.header-inner {
-    display: flex;
-    justify-content: center; /* Centraliza os elementos horizontalmente */
-    align-items: center;
-    flex-wrap: wrap; /* Permite que os elementos quebrem para a próxima linha */
-}
-
 .logo-container {
     display: flex;
     align-items: center;
+    justify-content: center;
     flex-direction: column;
-    margin-bottom: 20px; /* Adiciona margem inferior para separar dos cards */
 }
 
 .logo {
@@ -52,7 +38,6 @@ body {
     color: var(--ifood-secondary); /* Cor amarela */
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Adiciona sombra */
     margin: 10px 0; /* Aumenta a margem para dar mais espaço */
-    text-align: center; /* Centraliza o texto */
 }
 
 .slogan {
@@ -68,6 +53,7 @@ body {
 /* Barra de pesquisa */
 .search-form {
     margin-top: 10px;
+    width: 100%;
 }
 
 .search-bar {
@@ -91,103 +77,69 @@ body {
     background-color: #ffb300; /* Amarelo iFood escurecido ao passar o mouse */
 }
 
-/* Abas de propaganda */
-.propaganda-tab {
-    position: fixed;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 100px;
-    height: 100px;
-    background-color: #fff;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-}
-
-.left-tab {
-    left: 0;
-}
-
-.right-tab {
-    right: 0;
-}
-
-.propaganda-image {
-    width: auto;
-    height: 100%;
-}
-
 /* Menu */
 .menu-section {
+    background-color: #fff;
     padding: 20px 0;
 }
 
 .menu-container {
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 0 20px;
-}
-
-.card-box {
-    width: 100%;
-    margin-bottom: 60px; /* Espaçamento inferior */
-    display: flex;
     flex-wrap: wrap;
-    justify-content: space-between; /* Alinha os cards de forma a ocupar o espaço disponível */
+    justify-content: space-between;
 }
 
-/* Card */
-.card {
-    background-color: #fff; /* Fundo branco */
-    border-radius: 1px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave */
-    width: calc(33% - 20px); /* Ajuste do tamanho para três cards por linha com margem de 20px entre eles */
-    transition: transform 0.3s, box-shadow 0.3s; /* Animação de transição */
-    padding: 10px; /* Aumenta o preenchimento interno */
+.menu-item {
+    flex: 0 0 calc(33.333% - 20px); /* Alterado para 33.333% */
+    background-color: #fff;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+    margin-bottom: 20px; /* Adiciona espaço entre os cards */
 }
 
-.card:hover {
-    transform: translateY(-5px); /* Efeito de levantamento ao passar o mouse */
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Sombra mais intensa ao passar o mouse */
+.menu-item:hover {
+    transform: translateY(-5px);
 }
 
-.card img {
+.menu-item img {
     width: 100%;
     height: auto;
-    border-radius: 10px; /* Adiciona borda arredondada */
-    object-fit: cover; /* Redimensiona a imagem para preencher o espaço */
+    border-radius: 10px 10px 0 0;
 }
 
-.card-info {
-    text-align: center;
+.menu-item h3 {
+    font-size: 18px;
+    margin-top: 10px;
 }
 
-.card-info h3 {
-    font-size: 24px;
-    margin-bottom: 15px;
+.menu-item p {
+    font-size: 14px;
+    margin-bottom: 10px;
 }
 
-.card-info p {
-    font-size: 16px;
-    margin-bottom: 15px;
-}
-
-.info-button {
-    padding: 10px 20px;
-    background-color: red; /* Cor vermelha */
-    color: yellow; /* Cor amarela */
+.show-more-button,
+.show-less-button {
+    width: 100%;
+    padding: 10px 0;
+    background-color: red;
+    color: #fff;
     border: none;
-    border-radius: 10px;
+    border-radius: 5px;
     cursor: pointer;
-    margin-top: auto;
+    margin-top: 20px;
+    display: none; /* Esconde os botões inicialmente */
 }
 
-.info-button:hover {
-    background-color: #555;
+.show-more-button:hover,
+.show-less-button:hover {
+    background-color: #ff0000;
 }
 
 /* Rodapé */
 .footer {
-    background-color: #ff4d4d;
+    background-color: #ff4d4d; /* Cor corrigida */
     color: #fff;
     padding: 20px 0;
     text-align: center;
@@ -197,25 +149,8 @@ body {
 @media only screen and (max-width: 100%) {
     .card {
         width: 100%;
-        }
     }
-
-/* Estilo para os números de página */
-.pagination {
-    margin-top: 20px;
-    text-align: center;
 }
-
-.pagination a {
-    display: inline-block;
-    margin: 0 5px;
-    padding: 5px 10px;
-    background-color: #ff9999;
-    color: #fff;
-    border-radius: 5px;
-    text-decoration: none;
-}
-
 .pagination a:hover {
     background-color: #ff6666;
 }
@@ -245,5 +180,36 @@ body {
     width: 100%;
     padding: 10px;
     margin-bottom: 20px;
-    border: 1px solid #ccc;
+    border: 1px solid #ccc;
+}
+
+.pagination {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.pagination a {
+    display: inline-block;
+    margin: 0 5px;
+    padding: 5px 10px;
+    background-color: #ff9999;
+    color: #fff;
+    border-radius: 5px;
+    text-decoration: none;
+}
+
+.pagination a:hover {
+    background-color: #ff6666;
+}
+
+.menu-item {
+    flex: 0 0 calc(33.333% - 20px); /* Alterado para 33.333% */
+    margin-bottom: 20px; /* Espaçamento inferior adicionado */
+}
+
+@media only screen and (max-width: 767px) {
+    .menu-item {
+        flex: 0 0 calc(50% - 20px); /* Alterado para 50% */
     }
+}
+
