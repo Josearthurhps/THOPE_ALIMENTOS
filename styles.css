@@ -112,11 +112,13 @@ body {
 .menu-item h3 {
     font-size: 18px;
     margin-top: 10px;
+    margin-left: 10px; /* Adiciona espaçamento à esquerda */
 }
 
 .menu-item p {
-    font-size: 14px;
-    margin-bottom: 10px;
+    font-size: 18px;
+    margin-top: 10px;
+    margin-left: 10px; /* Adiciona espaçamento à esquerda */
 }
 
 .show-more-button,
