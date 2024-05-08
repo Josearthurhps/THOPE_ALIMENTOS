@@ -23,13 +23,22 @@
     </div>
   </header>
 
+  <section id="searchResults" class="search-results" style="display: none;">
+    <div class="container">
+      <h2>Resultados da pesquisa</h2>
+      <div id="searchResultsList" class="search-results-list">
+        <!-- Os resultados da pesquisa serão adicionados dinamicamente aqui -->
+      </div>
+    </div>
+  </section>
+
   <section class="menu-section">
     <div class="container">
       <div class="menu-container">
         <!-- Card 1 -->
         <div class="menu-item">
           <img src="Imagens/indisponivel.jpg" alt="Camarão Empanado">
-          <h3>Indisponivel</h3>
+          <h3>indisponivel</h3>
           <p class="price">R$ 00,00</p>
           <p class="description"><strong></strong></p>
         </div>
@@ -101,7 +110,6 @@
     </div>
   </section>
 
-
   <!-- Opção de mais páginas -->
   <div class="pagination">
     <a href="index.html">1</a>
@@ -112,19 +120,21 @@
   </div>
 
   <div class="contact-form">
-    <h2>Entre em Contato</h2>
-    <form id="contactForm">
-      <label for="name">Nome:</label>
-      <input type="text" id="name" name="name" required>
+    <div class="container">
+      <h2>Entre em Contato</h2>
+      <form id="contactForm">
+        <label for="name">Nome:</label>
+        <input type="text" id="name" name="name" required>
 
-      <label for="email">Email:</label>
-      <input type="email" id="email" name="email" required>
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
 
-      <label for="message">Mensagem:</label>
-      <textarea id="message" name="message" required></textarea>
+        <label for="message">Mensagem:</label>
+        <textarea id="message" name="message" required></textarea>
 
-      <button type="submit">Enviar</button>
-    </form>
+        <button type="submit">Enviar</button>
+      </form>
+    </div>
   </div>
 
   <footer class="footer">
@@ -132,5 +142,60 @@
       <p class="footer-text">&copy; 2024 THOP ALIMENTOS. Todos os direitos reservados</p>
     </div>
   </footer>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      const searchForm = document.getElementById("searchForm");
+      const searchInput = document.getElementById("searchInput");
+      const searchResultsSection = document.getElementById("searchResults");
+      const searchResultsList = document.getElementById("searchResultsList");
+      const menuContainer = document.querySelector(".menu-container");
+
+      const menuItems = document.querySelectorAll(".menu-item");
+
+      searchForm.addEventListener("submit", function(event) {
+        event.preventDefault();
+        const searchTerm = searchInput.value.trim().toLowerCase();
+
+        // Filtra os itens do menu com base no termo de pesquisa
+        const filteredResults = Array.from(menuItems).filter(function(item) {
+          return item.querySelector("h3").textContent.toLowerCase().includes(searchTerm);
+        });
+
+        // Limpa os resultados anteriores
+        searchResultsList.innerHTML = "";
+        menuContainer.innerHTML = ""; // Limpa os cards anteriores
+
+        // Se não houver resultados, exibe a mensagem "Sem resposta para essa pesquisa"
+        if (filteredResults.length === 0) {
+          searchResultsSection.style.display = "block";
+          searchResultsList.innerHTML = "<p>Sem resposta para essa pesquisa</p>";
+        } else {
+          // Se houver resultados, exibe-os normalmente
+          searchResultsSection.style.display = "block";
+          filteredResults.forEach(function(result) {
+            const listItem = document.createElement("li");
+            const itemClone = result.cloneNode(true);
+            itemClone.classList.add("menu-item"); // Adiciona a classe para manter a aparência
+            listItem.appendChild(itemClone);
+            searchResultsList.appendChild(listItem);
+
+            // Adiciona o card correspondente ao resultado da pesquisa
+            menuContainer.appendChild(result.cloneNode(true));
+          });
+        }
+      });
+
+      document.getElementById("contactForm").addEventListener("submit", function(event) {
+        event.preventDefault(); // Evita o comportamento padrão do formulário
+        const name = document.getElementById("name").value;
+        const email = document.getElementById("email").value;
+        const message = document.getElementById("message").value;
+        console.log("Nome:", name);
+        console.log("Email:", email);
+        console.log("Mensagem:", message);
+      });
+    });
+  </script>
 </body>
 </html>
