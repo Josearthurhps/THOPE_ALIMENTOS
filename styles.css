@@ -92,11 +92,13 @@ body {
 .menu-item {
     flex: 0 0 calc(33.333% - 20px); /* Alterado para 33.333% */
     background-color: #fff;
-    border-radius: 10px;
+    border-radius: 15px; /* Borda arredondada */
     overflow: hidden;
     box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease;
     margin-bottom: 20px; /* Adiciona espaço entre os cards */
+    cursor: pointer; /* Adiciona cursor ao passar por cima */
+    text-decoration: none; /* Remove sublinhado do link */
 }
 
 .menu-item:hover {
@@ -106,19 +108,21 @@ body {
 .menu-item img {
     width: 100%;
     height: auto;
-    border-radius: 10px 10px 0 0;
+    border-radius: 15px 15px 0 0; /* Borda arredondada apenas no topo */
 }
 
 .menu-item h3 {
     font-size: 18px;
     margin-top: 10px;
     margin-left: 10px; /* Adiciona espaçamento à esquerda */
+    color: #333;
 }
 
 .menu-item p {
-    font-size: 18px;
+    font-size: 16px;
     margin-top: 10px;
     margin-left: 10px; /* Adiciona espaçamento à esquerda */
+    color: #333;
 }
 
 .show-more-button,
@@ -148,11 +152,12 @@ body {
 }
 
 /* Responsividade */
-@media only screen and (max-width: 100%) {
-    .card {
-        width: 100%;
+@media only screen and (max-width: 767px) {
+    .menu-item {
+        flex: 0 0 calc(50% - 20px); /* Alterado para 50% */
     }
 }
+
 .pagination a:hover {
     background-color: #ff6666;
 }
@@ -182,7 +187,7 @@ body {
     width: 100%;
     padding: 10px;
     margin-bottom: 20px;
-    border: 1px solid #ccc;
+    border: 1px solid #ccc;
 }
 
 .pagination {
@@ -214,4 +219,3 @@ body {
         flex: 0 0 calc(50% - 20px); /* Alterado para 50% */
     }
 }
-
