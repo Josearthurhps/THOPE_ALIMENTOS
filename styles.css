@@ -100,16 +100,18 @@ body {
     margin-bottom: 20px; /* Adiciona espaço entre os cards */
     cursor: pointer; /* Adiciona cursor ao passar por cima */
     text-decoration: none; /* Remove sublinhado do link */
+    border: 2px solid #ff4d4d; /* Adiciona uma borda sólida */
 }
 
 .menu-item:hover {
     transform: translateY(-5px);
+    border-color: #ff6666; /* Muda a cor da borda ao passar o mouse */
 }
 
 .menu-item img {
     width: 100%;
     height: auto;
-    border-radius: 15px 15px 0 0; /* Borda arredondada apenas no topo */
+    border-radius: 13px 13px 0 0; /* Ajusta a borda arredondada devido à borda do card */
 }
 
 .menu-item h3 {
@@ -197,21 +199,4 @@ body {
     border: 1px solid #ccc;
 }
 
-.pagination {
-    text-align: center;
-    margin-top: 20px;
-}
 
-.pagination a {
-    display: inline-block;
-    margin: 0 5px;
-    padding: 5px 10px;
-    background-color: #ff9999;
-    color: #fff;
-    border-radius: 5px;
-    text-decoration: none;
-}
-
-.pagination a:hover {
-    background-color: #ff6666;
-}
