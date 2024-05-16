@@ -33,7 +33,7 @@ body {
 }
 
 .site-name {
-    font-family: 'Bebas Neue', cursive; /* Fonte Bomb */
+    font-family: 'Poppins', sans-serif; /* Fonte mais bonita */
     font-size: 48px; /* Aumenta o tamanho da fonte */
     color: var(--ifood-secondary); /* Cor amarela */
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Adiciona sombra */
@@ -41,6 +41,7 @@ body {
 }
 
 .slogan {
+    font-family: 'Poppins', sans-serif; /* Fonte mais bonita */
     font-size: 20px; /* Reduz o tamanho da slogan */
     color: var(--ifood-primary); /* Cor vermelha */
     text-align: center; /* Centraliza o texto */
@@ -153,8 +154,14 @@ body {
 
 /* Responsividade */
 @media only screen and (max-width: 767px) {
+    .menu-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
     .menu-item {
-        flex: 0 0 calc(50% - 20px); /* Alterado para 50% */
+        flex: 0 0 calc(80% - 20px); /* Ocupa 80% da largura no celular */
+        margin-bottom: 20px; /* Espaçamento inferior adicionado */
     }
 }
 
@@ -207,15 +214,4 @@ body {
 
 .pagination a:hover {
     background-color: #ff6666;
-}
-
-.menu-item {
-    flex: 0 0 calc(33.333% - 20px); /* Alterado para 33.333% */
-    margin-bottom: 20px; /* Espaçamento inferior adicionado */
-}
-
-@media only screen and (max-width: 767px) {
-    .menu-item {
-        flex: 0 0 calc(50% - 20px); /* Alterado para 50% */
-    }
 }
