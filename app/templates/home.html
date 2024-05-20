@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>THOPE ALIMENTOS - Acompanhando os seus momentos</title>
+
+  <link rel="stylesheet" href="../static/css/styles.css">
+</head>
+<body>
+  <header class="header">
+    <div class="container">
+      <div class="logo-container">
+        <img src="Imagens/logo.jpg" alt="THOP ALIMENTOS Logo" class="logo">
+        <div class="logo-title">
+          <h1 class="site-name">THOPE ALIMENTOS</h1>
+          <p class="slogan">Acompanhando os seus momentos</p>
+        </div>
+        <form class="search-form" id="searchForm">
+          <input type="text" placeholder="Buscar alimentos..." class="search-bar" id="searchInput">
+          <button type="submit" class="search-button">Buscar</button>
+        </form>
+      </div>
+    </div>
+  </header>
+
+  <section id="searchResults" class="search-results" style="display: none;">
+    <div class="container">
+      <h2>Resultados da pesquisa</h2>
+      <div id="searchResultsList" class="search-results-list">
+        <!-- Os resultados da pesquisa serão adicionados dinamicamente aqui -->
+      </div>
+    </div>
+  </section>
+
+  <section class="menu-section">
+
+    {% for product in list_product %}
+    <div class="container">
+        <div class="menu-container">
+            <!-- Card 1 -->
+            <a href="https://wa.me/5511986576824?text=Ol%C3%A1%2C+vim+pelo+site+%2ATHOPE+ALIMENTOS%2A+e+gostaria+de+mais+informa%C3%A7%C3%B5es+sobre+os+prudutos" class="menu-item">
+                <img src="Imagens/bolinho_de_mandioca.jpg" alt="Bolinho de Mandioca">
+                
+                <!-- <img src="{{ url_for('static', filename=product.images) }}"> -->
+                <img src="{{ url_for('static', filename=product.images) }}">
+                <h3>{{ product.name }}</h3>
+                <p class="price">R$:{{ product.price }}</p>
+                <p class="description"><strong></strong></p>
+            </a>
+          </div>
+    {% endfor %}
+
+</section>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <p class="footer-text">&copy; 2024 THOPE ALIMENTOS. Todos os direitos reservados</p>
+  </div>
+</footer>
+
+
+
+  <div class="contact-form" methods="POST">
+    <div class="container">
+      <h2>Entre em Contato</h2>
+      <form id="contactForm">
+        <label for="name">Nome:</label>
+        <input type="text" id="name" name="name" required>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+
+        <label for="message">Mensagem:</label>
+        <textarea id="message" name="message" required></textarea>
+
+        <button type="submit">Enviar</button>
+      </form>
+    </div>
+  </div>
+
+
+  <!-- <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      const searchForm = document.getElementById("searchForm");
+      const searchInput = document.getElementById("searchInput");
+      const searchResultsSection = document.getElementById("searchResults");
+      const searchResultsList = document.getElementById("searchResultsList");
+      const menuContainer = document.querySelector(".menu-container");
+
+      const menuItems = document.querySelectorAll(".menu-item");
+
+      searchForm.addEventListener("submit", function(event) {
+        event.preventDefault();
+        const searchTerm = searchInput.value.trim().toLowerCase();
+
+        // Filtra os itens do menu com base no termo de pesquisa
+        const filteredResults = Array.from(menuItems).filter(function(item) {
+          return item.querySelector("h3").textContent.toLowerCase().includes(searchTerm);
+        });
+
+        // Limpa os resultados anteriores
+        searchResultsList.innerHTML = "";
+        menuContainer.innerHTML = ""; // Limpa os cards anteriores
+
+        // Se não houver resultados, exibe a mensagem "Sem resposta para essa pesquisa"
+        if (filteredResults.length === 0) {
+          searchResultsSection.style.display = "block";
+          searchResultsList.innerHTML = "<p>Sem resposta para essa pesquisa</p>";
+        } else {
+          // Se houver resultados, exibe-os normalmente
+          searchResultsSection.style.display = "block";
+          filteredResults.forEach(function(result) {
+            const listItem = document.createElement("li");
+            const itemClone = result.cloneNode(true);
+            itemClone.classList.add("menu-item"); // Adiciona a classe para manter a aparência
+            listItem.appendChild(itemClone);
+            searchResultsList.appendChild(listItem);
+
+            // Adiciona o card correspondente ao resultado da pesquisa
+            menuContainer.appendChild(result.cloneNode(true));
+          });
+        }
+      });
+
+      document.getElementById("contactForm").addEventListener("submit", function(event) {
+        event.preventDefault(); // Evita o comportamento padrão do formulário
+        const name = document.getElementById("name").value;
+        const email = document.getElementById("email").value;
+        const message = document.getElementById("message").value;
+        console.log("Nome:", name);
+        console.log("Email:", email);
+        console.log("Mensagem:", message);
+      });
+    });
+  </script> -->
+
+<!-- <script src="javascript.js"></script> Incluindo o arquivo JavaScript -->
+</body>
+</html>
+
+
