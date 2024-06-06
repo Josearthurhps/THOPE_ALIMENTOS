@@ -15,7 +15,7 @@ def home():
     return render_template('home.html', list_product=list_product, data= data)
 
 @app.route('/email')
-def email():
+def gmail():
     #  Precisa pegar do form os dados para envio
     # nome, email e mensagem
     pass 
